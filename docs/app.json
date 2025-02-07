@@ -1,0 +1,1 @@
+[{"name": "app.py", "content": "from shiny import ui, render, App\n\napp_ui = ui.page_fluid(\n    ui.input_text_area(\"textarea\", \"Text input\", \"Hello World\"),  \n    ui.output_text_verbatim(\"value\"),\n)\n\ndef server(input, output, session):\n    @render.text\n    def value():\n        return input.textarea()\n\napp = App(app_ui, server)", "type": "text"}]
